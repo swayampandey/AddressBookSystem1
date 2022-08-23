@@ -71,6 +71,22 @@ public class AddressBook {
 		}
 	}
 	
-	
-
+	public void deleteContact() {
+		System.out.println("Enter the First Name to Delete the Contact : ");
+		String firstName = (sc.next());
+		boolean isAvailable = false;
+		
+		for(Contact contact : contactArrayList) {
+			if(contact.getFirstName().equalsIgnoreCase(firstName)) {
+				isAvailable = true;
+				contactArrayList.remove(contact);
+				System.out.println("Contact is Deleted ");
+				break;
+			}
+		}
+		if(isAvailable == false) {
+			System.out.println("Contact Not Available.");
+			
+		}	
+	}
 }
